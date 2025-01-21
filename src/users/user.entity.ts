@@ -1,17 +1,25 @@
-import { Table, Column, Model, DataType, CreatedAt } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, CreatedAt, BelongsTo, HasMany } from 'sequelize-typescript';
+import { Pet } from 'src/pet/dto/pet.entity';
 
-@Table
+@Table({tableName: 'users', timestamps: true})
 export class User extends Model<User>{
     @Column({
         type: DataType.INTEGER,
+        autoIncrement: true
     })
     seq: number;
+
+    @Column({
+        type: DataType.UUID,
+        primaryKey: true,
+        defaultValue: DataType.UUIDV4
+    })
 
     @Column({
         type: DataType.STRING,
         allowNull: false,
     })
-    name: string;
+    user_name: string;
 
     @Column({
         type: DataType.STRING,
@@ -19,6 +27,6 @@ export class User extends Model<User>{
     })
     password: string;
 
-    @CreatedAt
-    created_at: Date;
+    @HasMany(()=> Pet)
+    pets: []
 }
