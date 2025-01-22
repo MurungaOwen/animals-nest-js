@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, CreatedAt, BelongsTo, HasMany } from 'sequelize-typescript';
-import { Pet } from 'src/pet/dto/pet.entity';
+import { Pet } from '../pet/pet.entity'
 
 @Table({tableName: 'users', timestamps: true})
 export class User extends Model<User>{

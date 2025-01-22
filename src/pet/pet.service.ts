@@ -1,7 +1,7 @@
 import { Inject, Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { petProvider } from './dto/pet.provider';
 import { PET_REPOSITORY } from 'src/constants';
-import { Pet } from './dto/pet.entity';
+import { Pet } from './pet.entity';
 import { petDto } from './dto/pet.dto';
 import { validate } from 'class-validator';
 import { User } from 'src/users/user.entity';
