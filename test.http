@@ -1,0 +1,11 @@
+### Get a list of all users
+GET http://localhost:3000/api/v1/users 
+
+# create a user
+POST  http://localhost:3000/api/v1/users/create 
+Content-Type: application/json
+
+{
+  "user_name": "fed",
+  "password": "your_password"
+}
